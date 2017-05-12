@@ -1,3 +1,12 @@
+'''
+Question 1
+Given two strings s and t, determine whether some anagram of t is a substring
+of s. For example: if s = "udacity" and t = "ad", then the function returns
+True. Your function definition should look like: question1(s, t) and return
+a boolean True or False.
+'''
+
+
 def question1(s, t):
     # Check if there is a string or substring
     if s is None or t is None:
@@ -35,6 +44,11 @@ print question1(' ', 'lie')
 print question1('beautiful', None)
 # None
 ###############################################################################
+'''
+Question 2
+Given a string a, find the longest palindromic substring contained in a. Your
+function definition should look like question2(a), and return a string.
+'''
 
 
 def question2(a):
@@ -85,6 +99,19 @@ print question2(None)
 print question2(' ')
 # ' '
 ##############################################################################
+'''
+Question 3
+Given an undirected graph G, find the minimum spanning tree within G. A minimum
+spanning tree connects all vertices in a graph with the smallest possible total
+weight of edges. Your function should take in and return an adjacency list
+structured like this:
+
+{'A': [('B', 2)],
+ 'B': [('A', 2), ('C', 5)],
+ 'C': [('B', 5)]}
+Vertices are represented as unique strings. The function definition should be
+question3(G).
+'''
 
 
 def question3(G):
@@ -124,6 +151,31 @@ print question3({'F': [('F', 'B', 1)], 'B': [('B', 'F', 1), ('B', 'C', 5)],
 # {'H': [('C', 4)], 'C': [('B', 5), ('H', 4)], 'B': [('C', 5), ('F', 1)],
 #  'F': [('B', 1)]}
 ###############################################################################
+'''
+Question 4
+Find the least common ancestor between two nodes on a binary search tree. The
+least common ancestor is the farthest node from the root that is an ancestor of
+both nodes. For example, the root is a common ancestor of all nodes on the
+tree, but if both nodes are descendents of the root's left child, then that
+left child might be the lowest common ancestor. You can assume that both nodes
+are in the tree, and the tree itself adheres to all BST properties. The
+function definition should look like question4(T, r, n1, n2), where T is the
+tree represented as a matrix, where the index of the list is equal to the
+integer stored in that node and a 1 represents a child node, r is a
+non-negative integer representing the root, and n1 and n2 are non-negative
+integers representing the two nodes in no particular order. For example, one
+test case might be
+
+question4([[0, 1, 0, 0, 0],
+           [0, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0],
+           [1, 0, 0, 0, 1],
+           [0, 0, 0, 0, 0]],
+          3,
+          1,
+          4)
+and the answer would be 3.
+'''
 
 
 # Parent node to check if node has a child
@@ -203,6 +255,20 @@ print question4([[0, 1, 0, 0, 0],
                 4)
 # None
 ###############################################################################
+'''
+Question 5
+Find the element in a singly linked list that's m elements from the end. For
+example, if a linked list has 5 elements, the 3rd element from the end is the
+3rd element. The function definition should look like question5(ll, m), where
+ll is the first node of a linked list and m is the "mth number from the end".
+You should copy/paste the Node class below to use as a representation of a node
+in the linked list. Return the value of the node at that position.
+
+class Node(object):
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+'''
 
 
 class Node(object):
